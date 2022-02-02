@@ -24,7 +24,7 @@ public class C04_Screenshot extends TestBase {
         // 2.adim :  tum sayfanin screenshot'ini almak icin bir File olusturalim ve
         // dosya yolunu belirtelim
 
-        File tumSayfaSS=new File("src//tumSayfa.png");
+        File tumSayfaSS=new File("tumSayfa.png");
 
         // 3.adim : olusturdugumuz file ile takescreenshot objesini iliskilendirelim
 
@@ -34,7 +34,7 @@ public class C04_Screenshot extends TestBase {
         // eger spesifik bir webelementin screenshot'ini almak istiyorsaniz
 
         WebElement logoElementi=driver.findElement(By.xpath("(//img[@alt='Google'])[1]"));
-        File logoResmi=new File("src/logo.png");
+        File logoResmi=new File("logo.png");
         logoResmi=logoElementi.getScreenshotAs(OutputType.FILE);
 
 
