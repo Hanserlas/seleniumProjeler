@@ -40,6 +40,6 @@ public class C02_PageIlkClass {
         String sonucYazisiStr=amazonPage.sonucYazisiElementi.getText();
 
         Assert.assertTrue(sonucYazisiStr.contains("java"));
-
+        Driver.closeDriver();
     }
 }
