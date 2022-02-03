@@ -11,7 +11,11 @@ import java.time.Duration;
 
 public class Driver {
 
-    public static WebDriver  driver;
+    private  Driver(){
+
+    }
+
+    private static WebDriver  driver;
 
     public static WebDriver getDriver(){
 
