@@ -18,9 +18,12 @@ public class HotelMyCampPage {
     public WebElement usernameBox;
 
     @FindBy(xpath = "//input[@id='Password']")
-    public WebElement passwordBos;
+    public WebElement passwordBox;
 
     @FindBy(xpath = "//input[@id='btnSubmit']")
     public WebElement loginButonu;
+
+    @FindBy(xpath = "//div[@class='validation-summary-errors']")
+    public WebElement girisYapilamadiYaziElementi;
 
 }
