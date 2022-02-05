@@ -6,7 +6,7 @@ import pages.HMCWebTablePage;
 import pages.HotelMyCampPage;
 import utilities.Driver;
 
-public class C02_WebtableDinamikLocate {
+public class C01_WebtableDinamikLocate {
     // 3 test method'u olusturalim
 
 
