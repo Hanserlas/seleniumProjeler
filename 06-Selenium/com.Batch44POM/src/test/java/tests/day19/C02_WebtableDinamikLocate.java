@@ -10,7 +10,7 @@ public class C02_WebtableDinamikLocate {
     // 3 test method'u olusturalim
 
 
-    // 3. sutun numarasi verdigimde bana tum sutunu yazdirsin
+
 
     HMCWebTablePage hmcWebTablePage;
     HotelMyCampPage hotelMyCampPage;
@@ -42,6 +42,17 @@ public class C02_WebtableDinamikLocate {
         // 4.satirin 5.datasi   //tbody//tr[4]//td[5]
 
         System.out.println("girdiginiz hucredki element : "+hmcWebTablePage.hucreWebelementGetir(5,3));
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void sutunYazdirTesti(){
+        hotelMyCampPage=new HotelMyCampPage();
+        hotelMyCampPage.girisYap();
+        // 3. sutun numarasi verdigimde bana tum sutunu yazdirsin
+        hmcWebTablePage=new HMCWebTablePage();
+        hmcWebTablePage.sutunYazdir(4);
+
         Driver.closeDriver();
     }
 }
