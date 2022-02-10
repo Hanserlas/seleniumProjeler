@@ -53,5 +53,27 @@ public class AmazonStepDefinitions {
         Assert.assertTrue(sonucYazisiStr.contains("flower"));
     }
 
+    @Given("{string} icin arama yapar")
+    public void icin_arama_yapar(String arananKelime) {
 
+      amazonPages.aramaKutusu.sendKeys(arananKelime + Keys.ENTER);
+
+    }
+    @Then("sonuclarin {string} icerdigini test eder")
+    public void sonuclarin_icerdigini_test_eder(String arananKelime) {
+        String sonucYazisiStr=amazonPages.sonucYazisiElementi.getText();
+        Assert.assertTrue(sonucYazisiStr.contains(arananKelime));
+    }
+
+
+    @And("sayfayi kapatir")
+    public void sayfayiKapatir() {
+        Driver.closeDriver();
+    }
+
+    @Given("kullanici {string} sayfasina gider")
+    public void kullaniciSayfasinaGider(String istenenUrl) {
+        Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+
+    }
 }
