@@ -17,3 +17,4 @@ Feature: US1007 Scenario Outline ile amazon search
     |Samsung|
     |Armut  |
     |nutella|
+
