@@ -1,8 +1,10 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.EditorPage;
 import utilities.Driver;
 
@@ -10,7 +12,7 @@ public class EditorStepDefinitions {
 
     EditorPage editorPage=new EditorPage();
 
-    @When("kullanici https:\\/\\/editor.datatables.net adresine gider")
+    @When("kullanici editor anasayfaya gider")
     public void kullaniciHttpsEditorDatatablesNetAdresineGider() {
 
         Driver.getDriver().get("https://editor.datatables.net");
@@ -50,7 +52,7 @@ public class EditorStepDefinitions {
     }
     @Then("Start date olarak {string} yazar")
     public void start_date_olarak_yazar(String startDate) {
-        editorPage.dateBox.sendKeys(startDate);
+        editorPage.dateBox.sendKeys(startDate + Keys.ENTER);
 
     }
     @Then("Salary olarak {string} yazar")
@@ -78,5 +80,13 @@ public class EditorStepDefinitions {
     }
 
 
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int sure) {
 
+        try {
+            Thread.sleep(sure*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
