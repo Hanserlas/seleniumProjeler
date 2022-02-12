@@ -15,6 +15,8 @@ public class WebUniversityStepDefinitions {
 
     @Given("Login Portal'a  kadar asagi iner")
     public void login_portal_a_kadar_asagi_iner() {
+
+
         Actions actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
@@ -32,6 +34,8 @@ public class WebUniversityStepDefinitions {
     }
     @Then("{string} ve  {string} kutularina deger yazdirin")
     public void ve_kutularina_deger_yazdirin(String username, String password) {
+
+
         webUniversityPage.webUniversityUserNameBox.sendKeys(username);
         webUniversityPage.webUniversityPasswordBox.sendKeys(password);
 
@@ -43,8 +47,9 @@ public class WebUniversityStepDefinitions {
     }
     @Then("Popup'ta cikan yazinin {string} oldugunu test eder")
     public void popup_ta_cikan_yazinin_oldugunu_test_eder(String popUpYazi) {
-
+        System.out.println(Driver.getDriver().switchTo().alert().getText());
        String alertYazisi= Driver.getDriver().switchTo().alert().getText();
+        System.out.println(alertYazisi);
         Assert.assertEquals(popUpYazi,alertYazisi);
     }
     @Then("Ok diyerek Popup'i kapatir")
